@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', function () {
-    return view('user');
+Route::get('/greeting', function () {
+    return 'Greetings Everyone';
 });
+
+Route::get('{controller}/{action?}', [
+    'as' => 'default', 'uses' => 'EntityController@Index'
+]);
